@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        
+        <title>Document</title>
+        <script src="https://kit.fontawesome.com/370cac73c6.js" crossorigin="anonymous"></script>   
+             <style>
+                 @import url('https://fonts.googleapis.com/css2?family=Jost:wght@300&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Jost", sans-serif;
+}
+
+body {
+    background: #f3f2ef;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    height: 100%;
+    width: 100%;
+    font-family: "Jost", sans-serif;
+}
+
+html {
+    font-size: 100%;
+    height: 100%;
+}
+
+html {
+    background: #eee;
+}
+
+.box {
+    width: 100%;
+   
+    border-radius: 0.5rem;
+    box-shadow: 0 0.2rem 3rem rgba(0, 0, 0, 0.2);
+    background:white;
+    position:relative;
+    overflow: hidden;
+    transform: translate3d(0, 0, 0);
+    min-width: 20rem;
+    min-height: 35rem;
+ 
+}
+
+
+
+
+
+.box::after {
+    content: "";
+    display: block;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 11;
+    transform: translate3d(0, 0, 0);
+}
+
+
+
+.info {
+    display: flex;
+    justify-content: center;
+    flex-direction:column;
+    width: 100%;
+    height: 100vh;
+    z-index: 4;
+    align-items:center;
+    font-weight: 800;
+    
+ 
+}
+
+.location {
+    margin-top: -5.5rem;
+    text-align: center;
+    font-weight: 800;
+    font-size: 4.5rem;
+    text-transform: capitalize;
+}
+
+/* Search Bar Code done here*/
+.bg{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: nowrap;
+    flex-direction:column;
+    margin-bottom: 8.5%;
+}
+
+
+input {
+  background: rgba(255,255,255,0.4);
+  border: none;
+  position: relative;
+  display: block;
+  outline: none;
+  width: 400px;
+  height: 50p;
+  top: 50px;
+  margin: 0 auto;
+  padding: 12px;
+  color: #333;
+  -webkit-box-shadow: 0 2px 10px 1px rgba(218,112,214,0.2);
+  box-shadow: 0 2px 10px 1px rgba(0,0,0,0.5);
+  outline: px solid rgb(218, 112, 214);
+}
+::-webkit-input-placeholder { color: #666;} 
+:-moz-placeholder { color: #666; }
+::-moz-placeholder { color: #666; }
+:-ms-input-placeholder { color: #666; }
+
+@keyframes rotates {
+    from {
+        transform: translateX(-0.5rem);
+    }
+    from {
+        transform: translateX(0.5rem);
+    }
+}
+
+#date {
+    text-align: center;
+    margin-top: 0.5rem;
+    color: #57606f;
+    font-size: 1.2rem;
+    font-weight: 300;
+    text-transform: uppercase;
+}
+
+.temp {
+
+    text-align: center;
+    font-size: 2rem;
+}
+
+.tempmin_max {
+    text-align: center;
+    font-weight: 300;
+    font-size: 1.2rem;
+    color: #57606f;
+}
+
+
+
+.menu{
+    display: flex;
+    justify-content:center;
+    margin-top: 10px;
+   
+}
+
+
+.btn {
+ cursor: pointer;
+ display: inline-block;
+ border: 0;
+ font-weight: bold;
+ padding: 10px 20px;
+
+ margin-left: 7px;
+ color:black;
+
+ font-size: 17px;
+
+
+}
+
+table {
+  
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 20px;
+  
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+
+}
+
+
+.panel {
+  padding: 0 1px;
+  background-color: white;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  color:black;
+  width: 100%;
+  text-align:justify;
+  
+  
+ 
+ 
+
+}
+
+
+
+/*  Accordance */
+.accordion {
+   background:tomato; /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  color:white;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 20px;
+  transition: 0.4s;
+  font-weight: bold;
+}
+
+
+
+.accordion:after {
+  content: '\002B';
+  color:black;
+ 
+  float: right;
+
+  
+}
+
+.active:after {
+  content: "\2212";
+}
+
+
+/* Price Box */
+.pricebox {
+ width: 120%;
+ height: 300px;
+ background-color:wheat;
+ display: flex;
+ flex-direction: column;
+ align-items:center;
+ text-align: left;
+ justify-content: flex-end;
+
+}
+
+.pricebox .content {
+ width: 50%;
+margin-bottom: 2%;
+ color: black;
+ margin-left: -15%;
+ line-height: 1.6;
+ margin-top: 5%;
+}
+#cityname1{
+    display: none;
+}
+#n{
+    background-color: red;
+}
+#o{
+    background-color:yellow;
+}
+#p{
+    background-color: lightblue;
+}
+
+
+
+
+
+
+
+@media (max-width: 600px) {
+    .box {
+        width: 90vw;
+        height: 80vh;
+    }
+
+    .wave {
+        top: 85%;
+    }
+
+    #weathercon {
+        font-size: 5em;
+    }
+
+    .info {
+        font-size: 1.5em;
+    }
+
+}
+
+@media (max-width: 500px) {
+    .box {
+        height: 80vh;
+    }
+
+
+
+    /* Search Bar Code done here*/
+.bg{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap:nowrap;
+    flex-direction:column;
+    margin-bottom: 57%;
+}
+    
+     
+
+            table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+            }
+
+            td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+            }
+
+            tr:nth-child(even) {
+            background-color: #dddddd;
+            }
+
+
+
+
+   
+}
+
+body > span {
+    width: 100vw;
+    text-align: center;
+    color: grey;
+}
+
+.inputData {
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.inputField {
+    width: 50%;
+    margin: auto;
+    border-radius: 5rem;
+    padding: 1rem 1rem;
+    outline: none;
+    font-size: 1.5rem;
+}
+
+.errorMsg {
+    text-align: center;
+    font-size: 2rem;
+    margin: 2rem auto;
+}
+             </style>
+    </head>
+    <body onload="getLocation()">
+        
+       
+
+    
+
+        <!--This Code is for checking weather of city location-->
+       
+        <div class="box">
+
+            <div class="menu">
+                    <form  action="/link1" method="post">
+                        <button type="submit" class="btn"  >Weather Forecasting</button> 
+                    </form>
+
+                    <form  action="/link2" method="post">
+
+                        <button type="submit" class="btn"  style="border:2px solid orchid;">Air Pollution Forecasting</button> 
+                    </form>
+
+                        
+                    
+            </div>
+           
+           
+            
+            <form class="bg" action="/locasend1" method="post">
+                <input type="text" id="location1" name="location1" placeholder="Check Your City Temperture..."  />
+              
+            </form>
+            
+            
+
+                
+    
+
+                <div id="info">
+                    <h1 class="location" id="cityname">{%location%},{%country%}</h1>
+                    <p class="temp">{%status%}</p>
+                    <h2 class="temp">{%tempval%}&deg;C</h2>
+                    <p id="date" style="color: #000000;">WED | OCT 23 | 10:49 AM</p>
+                    <br><br>
+                   
+                    <p style="text-align: center;">Please follow <a href="https://en.wikipedia.org/wiki/Air_quality_index#CAQI"> this link </a> to learn more about calculation of Air Quality index</p>
+                  
+                   <!--   <p class="temp">{%status%}</p>-->
+                   <!-- <h2 class="temp">{%tempval%}&deg;C</h2>-->
+                 </div>
+                                  
+<table>
+    <h2 style="text-align: center;background-color:orchid;">Air Pollution Rating Stats :     <span style="background-color:green;padding:0px 12px 0px 12px;">Good</span>
+        <span style="background-color:yellow;padding:0px 12px 0px 12px;">Fair</span>
+        <span style="background-color:orange;padding:0px 12px 0px 12px;">Moderate</span>
+        <span style="background-color:red;padding:0px 12px 0px 12px;">Poor</span>
+        <span style="background-color:darkred;padding:0px 12px 0px 12px;">Very Poor</span></h2>
+  <tr style="background-color: orchid;">
+    <th>Nitrogen dioxide (NO2)</th>
+    <th>Ozone (O3)</th>
+    <th>particulates (PM2.5)</th>
+  </tr>
+  <tr>
+    
+    <td id="n">
+        <p id="no2rate">Moderate</p>
+        <p id="no2value"> {%pollval%}</p>
+        
+    </td>
+    <td id="o">
+        <p id="o3rate">Moderate</p>
+        <p id="o3value"> {%pollo2%}</p>
+        
+    </td>
+    <td id="p">
+        <p id="pm25rate">Moderate</p>
+        <p id="pm25value"> {%pollpm25%} </p>
+        
+    </td>
+    
+  </tr>
+ 
+  
+    
+
+    
+
+ 
+
+
+</table>
+
+
+
+
+
+                 
+                <button class="accordion">Nitrogen dioxide (NO2)</button>
+                 <div class="panel">
+                    <section class="pricebox">
+                          <div class="content">
+                            
+                            <br>
+                           
+                            <br>
+                           
+                
+                            <p style="margin-top: 5%;"> <tr>
+                                <td>What is N02: <br> Nitrogen dioxide comes from vehicles, power plants, 
+                            industrial emissions and off-road sources such as construction, 
+                            lawn and gardening equipment. 
+                            All of these sources burn fossil fuels.
+                             People who live or work near busy roadways can experience high exposures.</td>
+
+                                
+                             
+                              </tr></p>
+                             
+
+                              <p>    <td>Side Effects: <br> 
+                                Nitrogen dioxide causes a range of harmful effects on the lungs, including:
+                                Increased inflammation of the airways;
+                                Worsened cough and wheezing;
+                                Reduced lung function;
+                                Increased asthma attacks; and.
+                                Greater likelihood of emergency department and hospital admissions.
+                                Long-term exposure to high levels of nitrogen dioxide can cause chronic lung disease.</td></p>
+                
+                            <br>
+                           
+                          </div>
+                    </section>
+                
+                </div>
+                <button class="accordion">OZONE O3</button>
+                <div class="panel">
+                   <section class="pricebox">
+                         <div class="content">
+                           
+                           <br>
+                          
+               
+                           <p><td> What is 03: <br> Ozone (O3) is a highly reactive gas composed of three oxygen atoms. It is both a natural and a man-made product that occurs in the Earth's upper atmosphere. chemical plants, gasoline pumps, oil-based paints, autobody shops, and print shops hight contributor of ozone 03. </td></p>
+               
+                           <br>
+                          <p><td> Side Effects : <br> ozone can be harmful to health. When inhaled,
+                            ozone can damage the lungs. Relatively low amounts of ozone can cause chest pain, 
+                           coughing, shortness of breath and, throat irritation </td></p>
+                          
+                         </div>
+                   </section>
+               
+               </div>
+               <button class="accordion">particulates Material PM25</button>
+               <div class="panel">
+                  <section class="pricebox">
+                        <div class="content">
+                          
+                          <br>
+                         
+              
+                          <p>   <td> What is PM 2.5 : <br> PM10  includes dust from construction sites,
+                            landfills and agriculture, 
+                           wildfires and brush/waste burning, 
+                           industrial sources, wind-blown dust from open lands, 
+                           pollen and fragments of bacteria
+                            </td></p>
+              
+
+                          <br>
+                          <p>
+                            <td> Side Effects : <br> 
+                                Coarse (bigger) particles, called PM10,
+                                 can irritate your eyes, nose,
+                                 and throat. Dust from roads, farms, 
+                                dry riverbeds, construction sites, 
+                                and mines are types of PM10.</td>
+                                  </tr>
+                          </p>
+                         
+                        </div>
+                  </section>
+              
+              </div>
+
+
+
+                 <!--Here is the table data for air pollution -->
+
+
+
+                 
+
+
+
+                
+                
+        </div>
+
+        
+
+
+        <script>
+            const curDate=document.getElementById("date");
+            let weathercon=document.getElementById("weathercon");
+
+            const tempStatus="Clouds";
+
+            // Code for getting Day.Using Date() function we can get the current date not necessary to do the below code.
+                const getCurrentday= function(){
+                    const weekday = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+                    let currentTime= new Date();
+                    let day = weekday[currentTime.getDay()];
+
+                    //alert(currentTime);//Used For checking
+                    //alert(day);
+
+                    return day;
+
+                };
+
+               
+
+                const getCurrenttime= function(){
+                    var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+                    var now = new Date();
+                    var month = months[now.getMonth()]; //months from 1-12
+                    var day = now.getDate();
+                    let hours =now.getHours();
+                    let mins = now.getMinutes();
+
+                    let perios= "AM";
+
+                    if(hours > 11){
+                        perios="PM";
+                        if(hours > 12) hours -=12;
+                    }
+
+                    if(mins < 10){
+                        mins ="0"+mins;
+                    }
+
+                    //alert(getCurrentday);
+                
+
+                    return  `${month} ${day}  | ${hours}:${mins}${perios}`;
+                    
+                };
+
+                curDate.innerHTML = getCurrentday() + " " + getCurrenttime();
+
+             
+
+
+
+
+
+
+
+               
+
+
+
+
+
+        </script>
+
+        
+
+                    <script>
+                        //Code For Getting Accordion
+                        var acc = document.getElementsByClassName("accordion");
+                        var i;
+                        
+                        for (i = 0; i < acc.length; i++) {
+                        acc[i].addEventListener("click", function() {
+                            this.classList.toggle("active");
+                            var panel = this.nextElementSibling;
+                            if (panel.style.maxHeight) {
+                            panel.style.maxHeight = null;
+                            } else {
+                            panel.style.maxHeight = panel.scrollHeight + "px";
+                            } 
+                        });
+                        }
+                        </script>
+
+                    <script>
+                        //Code For location change input
+                        var input = document.getElementById("location1");
+                        input.addEventListener("keyup", function(event) {
+                        if (event.keyCode === 13) {
+                        //event.preventDefault();
+                        
+                        }
+                        });
+                        </script>
+
+                        <script>
+                            //Code for temperature data city wise conditioning if-else method
+                            var no2;
+                            no2=document.getElementById("no2value").innerText;
+                            var o3;
+                            o3=document.getElementById("o3value").innerText;
+                            var pm25;
+                            pm25=document.getElementById("pm25value").innerText;
+                            if(no2>=0 && no2<=50){
+                                //color change to green.
+                                //rating is good
+                                //Index 1
+                                document.getElementById("n").style.backgroundColor="green";
+                                document.getElementById("no2rate").innerHTML="Good";
+                            }
+                            else if(no2>=51 && no2<=100){
+                                //color change to yellow.
+                                //Fair
+                                //Index 2
+                                document.getElementById("n").style.backgroundColor="yellow";
+                                document.getElementById("no2rate").innerHTML="Fair";
+
+                            }
+                            else if(no2>=101 && no2<=200){
+                                //Color Change to Orange.
+                                //Moderate
+                                //Index 3
+                                document.getElementById("n").style.backgroundColor="orange";
+                                document.getElementById("no2rate").innerHTML="Moderate";
+
+                            }
+                            else if(no2>=201 && no2<=400){
+                                //Color Change to Red.
+                                //Poor
+                                //Index 4
+                                document.getElementById("n").style.backgroundColor="red";
+                                document.getElementById("no2rate").innerHTML="Poor";
+
+
+                            }
+                            else if(no2>400){
+                                //Color Change to Dark Red.
+                                //Very Poor
+                                //Index 5.
+                                document.getElementById("n").style.backgroundColor="dark red";
+                                document.getElementById("no2rate").innerHTML="Very Poor";
+
+
+                            }
+
+
+                            //code ofr ozone 3 layer
+                            if(o3>=0 && o3<=60){
+                                //color change to green.
+                                //rating is good
+                                //Index 1
+                                document.getElementById("o").style.backgroundColor="green";
+                                document.getElementById("o3rate").innerHTML="Good";
+                            }
+                            else if(o3>=61 && o3<=120){
+                                //color change to yellow.
+                                //Fair
+                                //Index 2
+                                document.getElementById("o").style.backgroundColor="yellow";
+                                document.getElementById("o3rate").innerHTML="Fair";
+
+                            }
+                            else if(o3>=121 && o3<=180){
+                                //Color Change to Orange.
+                                //Moderate
+                                //Index 3
+                                document.getElementById("o").style.backgroundColor="orange";
+                                document.getElementById("o3rate").innerHTML="Moderate";
+
+                            }
+                            else if(o3>=181 && o3<=240){
+                                //Color Change to Red.
+                                //Poor
+                                //Index 4
+                                document.getElementById("o").style.backgroundColor="red";
+                                document.getElementById("o3rate").innerHTML="Poor";
+
+
+                            }
+                            else if(o3>240){
+                                //Color Change to Dark Red.
+                                //Very Poor
+                                //Index 5.
+                                document.getElementById("o").style.backgroundColor="dark red";
+                                document.getElementById("o3rate").innerHTML="Very Poor";
+
+
+                            }
+
+
+                            
+                            //code of pm25 layer
+                            if(pm25>=0 && pm25<=15){
+                                //color change to green.
+                                //rating is good
+                                //Index 1
+                                document.getElementById("p").style.backgroundColor="green";
+                                document.getElementById("pm25rate").innerHTML="Good";
+                            }
+                            else if(pm25>=16 && pm25<=30){
+                                //color change to yellow.
+                                //Fair
+                                //Index 2
+                                document.getElementById("p").style.backgroundColor="yellow";
+                                document.getElementById("pm25rate").innerHTML="Fair";
+
+                            }
+                            else if(pm25>=31 && pm25<=55){
+                                //Color Change to Orange.
+                                //Moderate
+                                //Index 3
+                                document.getElementById("p").style.backgroundColor="orange";
+                                document.getElementById("pm25rate").innerHTML="Moderate";
+
+                            }
+                            else if(pm25>=56 && pm25<=110){
+                                //Color Change to Red.
+                                //Poor
+                                //Index 4
+                                document.getElementById("p").style.backgroundColor="red";
+                                document.getElementById("pm25rate").innerHTML="Poor";
+
+
+                            }
+                            else if(pm25>110){
+                                //Color Change to Dark Red.
+                                //Very Poor
+                                //Index 5.
+                                document.getElementById("p").style.backgroundColor="dark red";
+                                document.getElementById("pm25rate").innerHTML="Very Poor";
+
+
+                            }
+                        </script>
+    </body>
+</html>
